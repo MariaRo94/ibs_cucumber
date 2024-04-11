@@ -1,8 +1,6 @@
 package lab.ibs.cucumber.ibs.coontroller;
 
 import lab.ibs.cucumber.ibs.dto.Element;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-public class FruitsController {
+public class ElementsController {
     HashMap<String, Element> bucket = new HashMap<>();
 
     @PostMapping("/fruits/add")
@@ -24,9 +22,9 @@ public class FruitsController {
     }
 
     @GetMapping("/fruits/delete")
-    public HttpStatusCode clearAll() {
+    public List<Element>  clearAll() {
         bucket.clear();
-        return ResponseEntity.ok().build().getStatusCode();
+        return new ArrayList<>(bucket.values());
     }
 
     @GetMapping("/fruits/get/{fruit}")

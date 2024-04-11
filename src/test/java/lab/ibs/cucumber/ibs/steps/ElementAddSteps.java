@@ -17,7 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @ContextConfiguration
 public class ElementAddSteps extends SpringIntegrationTest {
     private String addFruitUrl = "http://localhost:8080/fruits/add";
-    private String deleteAllFruitsUrl = "http://localhost:8080/fruits/delete";
     private Element[] elements;
     private final RestTemplate restTemplate = new RestTemplate();
     private Element element;

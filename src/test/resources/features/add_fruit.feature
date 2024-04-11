@@ -1,4 +1,4 @@
-Feature: Fruit adding
+Feature: Element adding
 
   Scenario: Add element to the list
     Given An element with type "vegetable" and name "batat" and id "1" and exotic "true"
